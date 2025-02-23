@@ -3,11 +3,11 @@ import esphome.config_validation as cv
 from esphome.components import cover
 from esphome.const import CONF_ID
 
-empty_cover_ns = cg.esphome_ns.namespace("empty_cover")
-EmptyCover = empty_cover_ns.class_("EmptyCover", cover.Cover, cg.Component)
+somfy_cover_ns = cg.esphome_ns.namespace("somfy_cover")
+SomfyCover = somfy_cover_ns.class_("SomfyCover", cover.Cover, cg.Component)
 
 CONFIG_SCHEMA = cover.COVER_SCHEMA.extend(
-    {cv.GenerateID(): cv.declare_id(EmptyCover)}
+    {cv.GenerateID(): cv.declare_id(SomfyCover)}
 ).extend(cv.COMPONENT_SCHEMA)
 
 
