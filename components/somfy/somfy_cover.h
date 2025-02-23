@@ -4,9 +4,9 @@
 #include "esphome/components/cover/cover.h"
 
 namespace esphome {
-namespace empty_cover {
+namespace somfy_cover {
 
-class EmptyCover : public cover::Cover, public Component {
+class SomfyCover : public cover::Cover, public Component {
  public:
   void setup() override;
   void loop() override;
@@ -17,5 +17,5 @@ class EmptyCover : public cover::Cover, public Component {
   void control(const cover::CoverCall &call) override;
 };
 
-}  // namespace empty_cover
+}  // namespace somfy_cover
 }  // namespace esphome
