@@ -22,9 +22,8 @@ void SomfyCover::dump_config() {
 cover::CoverTraits SomfyCover::get_traits() {
     auto traits = cover::CoverTraits();
     traits.set_is_assumed_state(false);
-    traits.set_supports_position(false);
-    traits.set_supports_tilt(false);
-
+    traits.set_supports_position(true); // changed jco
+    traits.set_supports_tilt(true);     // jco - to send other commands
     return traits;
 }
 
