@@ -1,5 +1,6 @@
 #include "esphome/core/log.h"
 #include "somfy_cover.h"
+#include "RFSomfy.h"
 
 namespace esphome {
 namespace somfy_cover {
@@ -7,7 +8,7 @@ namespace somfy_cover {
 static const char *TAG = "somfy_cover.cover";
 
 void SomfyCover::setup() {
-
+    self.cover = new RFSomfy(0, "shade"); // or "gate"
 }
 
 void SomfyCover::loop() {
