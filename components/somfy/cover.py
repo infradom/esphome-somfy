@@ -3,11 +3,16 @@ import esphome.config_validation as cv
 from esphome.components import cover
 from esphome.const import CONF_ID
 
+CONF_INITIAL_ROLLING_CODE  = "initial_rcode"
+
 somfy_cover_ns = cg.esphome_ns.namespace("somfy_cover")
 SomfyCover = somfy_cover_ns.class_("SomfyCover", cover.Cover, cg.Component)
 
 CONFIG_SCHEMA = cover.COVER_SCHEMA.extend(
-    {cv.GenerateID(): cv.declare_id(SomfyCover)}
+    {
+        cv.GenerateID(): cv.declare_id(SomfyCover),
+        cv.Optional(CONF_INITIAL_ROLLING_CODE, default=1): cv.int_,
+    }
 ).extend(cv.COMPONENT_SCHEMA)
 
 
